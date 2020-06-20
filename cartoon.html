@@ -76,15 +76,16 @@
 			border-color: grey;
 		}
 		.control {
-			display: inline;
+			display: grid;
+			grid-template-columns: 50% 50%;
 		}
 		.panel {
-			width: 50%;
+			width: 100%;
 			height: 300px;
 			background: green;
 		}
 		.command {
-			width: 50%;
+			width: 100%;
 			height: 300px;
 			background: red;
 		}
@@ -108,6 +109,7 @@
 			<div class="command"></div>
 		</div>
 	</div>
+	
 
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.js'></script>
 	<script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
