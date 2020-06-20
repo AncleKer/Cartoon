@@ -15,30 +15,26 @@
 		.container {
 		  	width: 800px;
 		  	display: inline-block;
+		  	transform: translateY(200px);
 		}
 		.space {
-			height: 100px;
+			height: 0px;
 		}
 		.tools {
-			height: 100%;
-			display: inline;
+			margin-left: 350px;
 		}
 		.holder {
 			width: 10px;
 			height: 400px;
 			background: blue;
-			position: relative;
-			margin-left: 350px;
-			left: 0px;
-			top: 90px;
 		}
 		.needle {
 			width: 50px;
 			height: 20px;
 			background: grey;
-			position: relative;
+			position: absolute;
+			top: 20px;
 			left: 340px;
-			top: -290px;
 		}
 		.needle::after {
 			content: "";
@@ -50,26 +46,24 @@
 			left: 40px;
 			top: -10px;
 		}
-		.car {
-			display: inline;
-		}
 		.bottle {
-			width: 30px;
+			width: 15px;
 			height: 50px;
-			background: orange;
-			position: relative;
-			top: 20px;
+			border-style: dashed;
+			border-width: 2px;
+			border-color: grey;
+			position: absolute;
+			top: 350px;
 		}
 		.pallet {
-			width: 200px;
+			width: 190px;
 			height: 20px;
 			background: red;
-			position: relative;
-			top: 0px;
-			left: 600px;
+			position: absolute;
+			top: 380px;
+			left: 590px;
 		}
 		.floor {
-			width: 100%;
 			height: 20px;
 			border-style: solid;
 			border-width: 5px;
@@ -79,15 +73,16 @@
 			display: grid;
 			grid-template-columns: 50% 50%;
 		}
-		.panel {
+		.panel .command {
 			width: 100%;
-			height: 300px;
-			background: green;
+			height: 100%;
 		}
-		.command {
-			width: 100%;
+		.box {
+			margin: 10px;
+			border-style: dashed;
+			border-width: 2px;
+			border-color: grey;
 			height: 300px;
-			background: red;
 		}
     </style>
 </head>
@@ -99,14 +94,27 @@
 			<div class="holder"></div>
 			<div class="needle"></div>
 			<div class="car">
-				<div class="bottle" style="left: 610px"></div>
+				<div class="bottle" style="left: 600px"></div>
+				<div class="bottle" style="left: 630px"></div>
+				<div class="bottle" style="left: 660px"></div>
+				<div class="bottle" style="left: 690px"></div>
+				<div class="bottle" style="left: 720px"></div>
+				<div class="bottle" style="left: 750px"></div>
 				<div class="pallet"></div>
 			</div>
 		</div>
 		<div class="floor"></div>
 		<div class="control">
-			<div class="panel"></div>
-			<div class="command"></div>
+			<div class="panel">
+				<div class="box">
+					
+				</div>
+			</div>
+			<div class="command">
+				<div class="box">
+					
+				</div>
+			</div>
 		</div>
 	</div>
 	
@@ -114,7 +122,7 @@
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.js'></script>
 	<script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
 	<script type="text/javascript">
-		
+		var animation = anime.timeline({});
 	</script>
 </body>
 </html>

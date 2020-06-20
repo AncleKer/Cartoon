@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+<title></title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<style type="text/css">
+body {
+background: #000000;
+text-align: center;
+}
+.container {
+width: 800px;
+display: inline-block;
+transform: translateY(200px);
+}
+.tools {
+margin-left: 250px;
+}
+.holder {
+width: 10px;
+height: 500px;
+background: blue;
+}
+.needle {
+width: 75px;
+height: 30px;
+background: grey;
+position: absolute;
+top: 20px;
+left: 240px;
+}
+.needle::after {
+content: "";
+width: 3px;
+height: 150px;
+display: block;
+background: grey;
+position: absolute;
+top: -10px;
+left: 60px;
+}
+.bottle {
+width: 30px;
+height: 50px;
+background: orange;
+position: absolute;
+top: -50px;
+}
+.pallet {
+width: 300px;
+height: 30px;
+background: red;
+position: absolute;
+top: -30px;
+left: 210px;
+}
+.floor {
+width: 100%;
+height: 30px;
+border-style: solid;
+border-width: 5px;
+border-color: grey;
+}
+.control {
+width: 100%;
+margin-top: 20px;
+text-align: left;
+}
+.play {
+margin-left: 0px;
+width: 100px;
+height: 30px;
+}
+.con-but {
+display: inline;
+}
+.wait {
+display: inline;
+/* border-style: dotted;
+border-color: orange;
+border-width: 2px;
+border-radius: 1px;
+height: 100%;*/
+}
+.con-but input {
+padding: 0px;
+width: 30px;
+height: 26px;
+border-width: 2px;
+text-align: center;
+}
+.con-but p {
+display: inline;
+color: white;
+}
+.reset {
+margin-left: 0px;
+width: 100px;
+height: 30px;
+}
+</style>
+
+</head>
+
+<body>
+<div class="container">
+	<div class="tools">
+		<div class="holder"></div>
+		<div class="needle"></div>
+		<div class="car">
+			<div class="bottle" id="bo1" style="left: 220px;"></div>
+			<div class="bottle" id="bo2" style="left: 270px;"></div>
+			<div class="bottle" id="bo3" style="left: 320px;"></div>
+			<div class="bottle" id="bo4" style="left: 370px;"></div>
+			<div class="bottle" id="bo5" style="left: 420px;"></div>
+			<div class="bottle" id="bo6" style="left: 470px;"></div>
+			<div class="pallet"></div>
+		</div>
+	</div>
+	<div class="floor"></div>
+	<div class="control">
+		<div class="con-but">
+			<div class="wait" id="wait1">
+				<input type="text" name="wait1" style="border-color: grey;" value="1">
+				<p>s</p>
+				<p>+</p>
+				<input type="text" name="wait1" style="border-color: orange;" value="1">
+				<p>s</p>
+				</div>
+				<div class="wait" id="wait2">
+				<p>+</p>
+				<input type="text" name="wait2" style="border-color: grey;" value="1">
+				<p>s</p>
+				<p>+</p>
+				<input type="text" name="wait2" style="border-color: orange;" value="1">
+				<p>s</p>
+			</div>
+			<div class="wait" id="wait2">
+				<p>+</p>
+				<input type="text" name="wait2" style="border-color: grey;" value="1">
+				<p>s</p>
+				<p>+</p>
+				<input type="text" name="wait2" style="border-color: orange;" value="1">
+				<p>s</p>
+				</div>
+				<div class="wait" id="wait2">
+				<p>+</p>
+				<input type="text" name="wait2" style="border-color: grey;" value="1">
+				<p>s</p>
+				<p>+</p>
+				<input type="text" name="wait2" style="border-color: orange;" value="1">
+				<p>s</p>
+				</div>
+				<div class="wait" id="wait2">
+				<p>+</p>
+				<input type="text" name="wait2" style="border-color: grey;" value="1">
+				<p>s</p>
+				<p>+</p>
+				<input type="text" name="wait2" style="border-color: orange;" value="1">
+				<p>s</p>
+				</div>
+				<div class="wait" id="wait2">
+				<p>+</p>
+				<input type="text" name="wait2" style="border-color: grey;" value="1">
+				<p>s</p>
+				<p>+</p>
+				<input type="text" name="wait2" style="border-color: orange;" value="1">
+				<p>s</p>
+			</div>
+		</div>
+	</div>
+	<div class="control" style="margin-top: 10px; text-align: center;">
+		<button class="play">PLAY</button>
+		<button class="reset">Reset</button>
+	</div>
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.js'></script>
+<script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+
+<script type="text/javascript">
+var easing = 'linear';
+
+var animation = anime.timeline({
+targets: '.holder',
+translateX: 0,
+translateY: 0,
+autoplay: false,
+});
+animation
+.add({
+targets: '.car',
+translateX: -185,
+translateY: 0,
+delay: 1000,
+easing
+}).add({
+targets: '.needle',
+translateX: 0,
+translateY: 320,
+delay: 1000,
+easing
+}).add({
+targets: '.needle',
+translateX: 0,
+translateY: 0,
+delay: 1000,
+easing
+}).add({
+targets: '.car',
+translateX: -235,
+translateY: 0,
+delay: 1000,
+easing
+}).add({
+targets: '.needle',
+translateX: 0,
+translateY: 320,
+delay: 1000,
+easing
+}).add({
+targets: '.needle',
+translateX: 0,
+translateY: 0,
+delay: 1000,
+easing
+}).add({
+targets: '.car',
+translateX: -285,
+translateY: 0,
+delay: 1000,
+easing
+}).add({
+targets: '.needle',
+translateX: 0,
+translateY: 320,
+delay: 1000,
+easing
+}).add({
+targets: '.needle',
+translateX: 0,
+translateY: 0,
+delay: 1000,
+easing
+}).add({
+targets: '.car',
+translateX: -335,
+translateY: 0,
+delay: 1000,
+easing
+}).add({
+targets: '.needle',
+translateX: 0,
+translateY: 320,
+delay: 1000,
+easing
+}).add({
+targets: '.needle',
+translateX: 0,
+translateY: 0,
+delay: 1000,
+easing
+}).add({
+targets: '.car',
+translateX: -385,
+translateY: 0,
+delay: 1000,
+easing
+}).add({
+targets: '.needle',
+translateX: 0,
+translateY: 320,
+delay: 1000,
+easing
+}).add({
+targets: '.needle',
+translateX: 0,
+translateY: 0,
+delay: 1000,
+easing
+}).add({
+targets: '.car',
+translateX: -435,
+translateY: 0,
+delay: 1000,
+easing
+}).add({
+targets: '.needle',
+translateX: 0,
+translateY: 320,
+delay: 1000,
+easing
+}).add({
+targets: '.needle',
+translateX: 0,
+translateY: 0,
+delay: 1000,
+easing
+})
+</script>
+<script type="text/javascript">
+document.querySelector('.play').onclick = animation.play;
+document.querySelector('.reset').onclick = animation.reset;
+</script>
+</body>
+</html>
