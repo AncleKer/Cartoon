@@ -52,7 +52,7 @@
                             <div class="element rea_green"></div>
                             <div class="element rea_cyan"></div>
                             <div class="element rea_blue"></div>
-                            <div class="element-add">
+                            <div class="element-add" onclick="addReagent(this)">
                                 <span style="font-size: 20px; font-weight: bold;">+</span>
                             </div>
                         </div>
@@ -75,8 +75,14 @@
                             <div class="element sol_green"></div>
                             <div class="element sol_cyan"></div>
                             <div class="element sol_blue"></div>
-                            <div class="element-add">
+                            <div class="element-add" onclick="addSolvent(this)">
                                 <span style="font-size: 20px; font-weight: bold;">+</span>
+                            </div>
+                        </div>
+                        <div class="item3">
+                            <div class="new-element">
+                                <hr width=260px align="left" style="border:1px dashed grey">
+                                <h5>New Solvent</h5>
                             </div>
                         </div>
                     </div>
@@ -115,9 +121,14 @@
         $('.element').click(function() {
             target_class = this.className.split(' ')[1];
             console.log(target_class);
-            $('#'+active_bottle).removeClass();
+            document.getElementById(active_bottle).className = "bottle empty-bottle active";
             $('#'+active_bottle).addClass(target_class);
         });
+    </script>
+    <script type="text/javascript">
+        function addReagent(elem) {
+            console.log(elem);
+        };
     </script>
 	<script type="text/javascript">
 		var animation = anime.timeline({});
