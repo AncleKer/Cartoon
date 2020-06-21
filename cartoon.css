@@ -3,9 +3,11 @@ body {
     text-align: center;
 }
 .container {
-    width: 800px;
+    width: 1100px;
     display: inline-block;
-    transform: translateY(100px);
+}
+.absolute-zero {
+    position: relative;
 }
 .space {
     height: 0px;
@@ -13,13 +15,16 @@ body {
 .tools {
     margin-left: 350px;
 }
+.tools span {
+    color: white;
+}
 .holder {
     width: 10px;
     height: 400px;
     background: blue;
 }
 .needle {
-    width: 50px;
+    width: 70px;
     height: 20px;
     background: grey;
     position: absolute;
@@ -33,24 +38,16 @@ body {
     height: 130px;
     position: absolute;
     background: grey;
-    left: 40px;
+    left: 60px;
     top: -10px;
+    z-index: -1;
 }
 .bottle {
     width: 15px;
     height: 40px;
-    top: 350px;
+    top: 360px;
     position: absolute;
-    cursor: pointer;
-}
-.bottle:hover,
-.bottle:active {
-    border-color: white;
-}
-.empty-bottle {
-    border-style: dashed;
-    border-width: 2px;
-    border-color: grey;
+    background-color: orange;
 }
 .pallet {
     width: 190px;
@@ -58,122 +55,11 @@ body {
     background: red;
     position: absolute;
     top: 380px;
-    left: 590px;
+    left: 570px;
 }
 .floor {
     height: 20px;
     border-style: solid;
     border-width: 5px;
     border-color: grey;
-}
-.control {
-    display: grid;
-    grid-template-columns: 50% 50%;
-}
-.panel .command {
-    width: 100%;
-    height: 100%;
-}
-.box { 
-    margin: 10px;
-}
-.reagent, .solvent, .empty {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: auto;
-    grid-gap: 0px 0px;
-}
-.item1 {
-    grid-column-start: 1;
-    grid-column-end: 3;
-}
-.item2 {
-    grid-column-start: 4;
-    grid-column-end: 13;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 20px);
-    grid-template-rows: 20px;
-    grid-gap: 20px;
-    grid-auto-rows: 20px;
-}
-.item3 {
-    margin-top: 10px;
-    height: 50px;
-    grid-column-start: 4;
-    grid-column-end: 13;
-}
-.container h3, 
-.container h4 {
-    color: white;
-    text-align: left;
-}
-button {
-    width: 80px;
-    height: 30px;
-}
-.element {
-    border-radius: 5px;
-    cursor: pointer;
-}
-.element:hover,
-.element:active {
-    border-style: solid;
-    border-color: white;
-    border-width: 2px;
-}
-.element-add {
-    border-style: dashed; 
-    border-width: 2px; 
-    border-color: grey; 
-    border-radius: 0px; 
-    line-height: 13px;
-    color: grey;
-    cursor: pointer;
-}
-.element-add:hover,
-.element-add:active {
-    color: white;
-    border-color: white;
-}
-.new-element h5 {
-    color: grey;
-    text-align: left;
-    margin: 5px 0px;
-}
-.buttons span {
-    color: grey;
-    font-size: 30px;
-    margin: 0px 20px;
-}
-.active {
-    color: white;
-    border-color: white;
-}
-.rea_red,
-.sol_red {
-    background-color: red;
-}
-.rea_orange,
-.sol_orange {
-    background-color: orange;
-}
-.rea_yellow,
-.sol_yellow {
-    background-color: yellow;
-}
-.rea_green,
-.sol_green {
-    background-color: green;
-}
-.rea_cyan,
-.sol_cyan {
-    background-color: cyan;
-}
-.rea_blue,
-.sol_blue {
-    background-color: blue;
-}
-.rea_purple,
-.sol_purple {
-    background-color: purple;
 }

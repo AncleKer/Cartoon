@@ -11,127 +11,112 @@
     <link rel="stylesheet" type="text/css" href="./cartoon.css">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.js'></script>
     <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+    <style type="text/css">
+        .screen {
+            display: grid;
+            grid-template-columns: 800px 300px;
+            grid-template-rows: auto;
+            grid-gap: 0px 5px;
+        }
+        .left {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto;
+            grid-gap: 5px 5px;
+        }
+        .motor {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        .valve {
+            grid-column-start: 1;
+            grid-column-end: 2;
+        }
+        .pump {
+            grid-column-start: 2;
+            grid-column-end: 3;
+        }
+        .motor, .valve, .pump {
+            padding: 10px;
+            border-color: grey;
+            border-style: dashed;
+            border-width: 2px;
+        }
+        .right {
+        }
+        .title {
+            position: absolute;
+        }
+        .title h3 {
+            margin: 10px;
+            color: white;
+        }
+        .knobs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto;
+            grid-gap: 5px 5px;
+        }
+        .knob {
+            height: 50px;
+            background-color: blue;
+        }
+    </style>
 </head>
 
 <body>
-	<div class="container">
-		<div class="space"></div>
-		<div class="tools">
-			<div class="holder"></div>
-			<div class="needle"></div>
-			<div class="car">
-				<div class="bottle empty-bottle active" style="left: 600px" id="bottle1"></div>
-				<div class="bottle empty-bottle" style="left: 630px" id="bottle2"></div>
-				<div class="bottle empty-bottle" style="left: 660px" id="bottle3"></div>
-				<div class="bottle empty-bottle" style="left: 690px" id="bottle4"></div>
-				<div class="bottle empty-bottle" style="left: 720px" id="bottle5"></div>
-				<div class="bottle empty-bottle" style="left: 750px" id="bottle6"></div>
-				<div class="pallet"></div>
-			</div>
-		</div>
-		<div class="floor"></div>
-		<div class="control">
-			<div class="panel">
-				<div class="box">
-					<h3 style="margin: 10px 0px 20px 0px;">Adding</h3>
-                    <div class="reagent">
-                        <div class="item1">
-                            <h4 style="margin: 0px 0px;">reagent:</h4>
-                        </div>
-                        <div class="item2">
-                            <div class="element rea_red"></div>
-                            <div class="element rea_orange"></div>
-                            <div class="element rea_yellow"></div>
-                            <div class="element rea_green"></div>
-                            <div class="element rea_cyan"></div>
-                            <div class="element rea_blue"></div>
-                            <div class="element rea_purple"></div>
-                            <div class="element rea_red"></div>
-                            <div class="element rea_orange"></div>
-                            <div class="element rea_yellow"></div>
-                            <div class="element rea_green"></div>
-                            <div class="element rea_cyan"></div>
-                            <div class="element rea_blue"></div>
-                            <div class="element-add" onclick="addReagent(this)">
-                                <span style="font-size: 20px; font-weight: bold;">+</span>
+    <div class="container">
+        <div class="screen">
+            <div class="left">
+                <div class="motor">
+                    <div class="title">
+                        <h3>Motor</h3>
+                    </div>
+                    <div class="absolute-zero">
+                        <div class="tools">
+                            <div class="holder"></div>
+                            <div class="needle">
+                                <span>motor 1</span>
+                            </div>
+                            <div class="car">
+                                <div class="bottle" style="left: 580px" id="bottle1"></div>
+                                <div class="bottle" style="left: 610px" id="bottle2"></div>
+                                <div class="bottle" style="left: 640px" id="bottle3"></div>
+                                <div class="bottle" style="left: 670px" id="bottle4"></div>
+                                <div class="bottle" style="left: 700px" id="bottle5"></div>
+                                <div class="bottle" style="left: 730px" id="bottle6"></div>
+                                <div class="pallet">
+                                    <span>motor 2</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="solvent" style="margin-top: 20px;">
-                        <div class="item1">
-                            <h4 style="margin: 0px 0px;">solvent:</h4>
-                        </div>
-                        <div class="item2">
-                            <div class="element sol_red"></div>
-                            <div class="element sol_orange"></div>
-                            <div class="element sol_yellow"></div>
-                            <div class="element sol_green"></div>
-                            <div class="element sol_cyan"></div>
-                            <div class="element sol_blue"></div>
-                            <div class="element sol_purple"></div>
-                            <div class="element sol_red"></div>
-                            <div class="element sol_orange"></div>
-                            <div class="element sol_yellow"></div>
-                            <div class="element sol_green"></div>
-                            <div class="element sol_cyan"></div>
-                            <div class="element sol_blue"></div>
-                            <div class="element-add" onclick="addSolvent(this)">
-                                <span style="font-size: 20px; font-weight: bold;">+</span>
-                            </div>
-                        </div>
-                        <div class="item3">
-                            <div class="new-element">
-                                <hr width=260px align="left" style="border:1px dashed grey">
-                                <h5>New Solvent</h5>
-                            </div>
-                        </div>
+                    <div class="floor"></div>
+                </div>
+                <div class="valve">
+                    <div class="title">
+                        <h3>Valve</h3>
                     </div>
-                    <div class="empty" style="margin-top: 20px;">
-                        <div class="item1">
-                            <h4 style="margin: 0px 0px;">empty:</h4>
+                    <div class="knobs">
+                        <div class="knob">
+                            <div></div>
                         </div>
-                        <div class="item2">
-                            <div class="empty-bottle"></div>
-                        </div>
+                        <div class="knob"></div>
+                        <div class="knob"></div>
+                        <div class="knob"></div>
                     </div>
-                    <div class="buttons" style="margin-top: 40px;">
-                        <span class="iconfont icon-qiyong" id="play"></span>
-                        <span class="iconfont icon-tingyong" id="stop"></span>
-                        <span class="iconfont icon-shuaxin" id="reset"></span>
-                    </div>
-				</div>
-			</div>
-			<div class="command">
-				<div class="box">
-                    <h3 style="margin: 10px 0px;">Commands</h3>
-				</div>
-			</div>
-		</div>
-	</div>
-	
+                </div>
+                <div class="pump">
+                </div>
+            </div>
+            <div class="right" style="background-color: grey">
+            </div>
+        </div>    
+    </div>
+    
     <script type="text/javascript">
-        var active_bottle = 'bottle1';
-
-        $('.bottle').click(function() {
-            $('.bottle').removeClass('active');
-            $('#'+this.id).addClass('active');
-            active_bottle = this.id;
-        });
-
-        $('.element').click(function() {
-            target_class = this.className.split(' ')[1];
-            console.log(target_class);
-            document.getElementById(active_bottle).className = "bottle empty-bottle active";
-            $('#'+active_bottle).addClass(target_class);
-        });
+        var animation = anime.timeline({});
     </script>
-    <script type="text/javascript">
-        function addReagent(elem) {
-            console.log(elem);
-        };
-    </script>
-	<script type="text/javascript">
-		var animation = anime.timeline({});
-	</script>
+    
 </body>
 </html>
