@@ -1,0 +1,165 @@
+body {
+    background: #000000;
+    text-align: center;
+}
+.container {
+    width: 800px;
+    display: inline-block;
+    transform: translateY(100px);
+}
+.space {
+    height: 0px;
+}
+.tools {
+    margin-left: 350px;
+}
+.holder {
+    width: 10px;
+    height: 400px;
+    background: blue;
+}
+.needle {
+    width: 50px;
+    height: 20px;
+    background: grey;
+    position: absolute;
+    top: 20px;
+    left: 340px;
+}
+.needle::after {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 130px;
+    position: absolute;
+    background: grey;
+    left: 40px;
+    top: -10px;
+}
+.bottle {
+    width: 15px;
+    height: 40px;
+    top: 350px;
+    position: absolute;
+}
+.bottle:hover,
+.bottle:active {
+    border-color: white;
+}
+.empty-bottle {
+    border-style: dashed;
+    border-width: 2px;
+    border-color: grey;
+}
+.pallet {
+    width: 190px;
+    height: 20px;
+    background: red;
+    position: absolute;
+    top: 380px;
+    left: 590px;
+}
+.floor {
+    height: 20px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: grey;
+}
+.control {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.panel .command {
+    width: 100%;
+    height: 100%;
+}
+.box { 
+    margin: 10px;
+}
+.reagent, .solvent, .empty {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 0px 0px;
+}
+.item1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.item2 {
+    grid-column-start: 4;
+    grid-column-end: 13;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 20px);
+    grid-template-rows: 20px;
+    grid-gap: 20px;
+    grid-auto-rows: 20px;
+}
+.container h3, 
+.container h4 {
+    color: white;
+    text-align: left;
+}
+button {
+    width: 80px;
+    height: 30px;
+}
+.element {
+    border-radius: 5px;
+}
+.element:hover,
+.element:active {
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
+}
+.element-add {
+    border-style: dashed; 
+    border-width: 2px; 
+    border-color: grey; 
+    border-radius: 0px; 
+    line-height: 13px;
+    color: grey;
+}
+.element-add:hover,
+.element-add:active {
+    color: white;
+    border-color: white;
+}
+.buttons span {
+    color: grey;
+    font-size: 30px;
+    margin: 0px 20px;
+}
+.active {
+    color: white;
+    border-color: white;
+}
+.rea_red,
+.sol_red {
+    background-color: red;
+}
+.rea_orange,
+.sol_orange {
+    background-color: orange;
+}
+.rea_yellow,
+.sol_yellow {
+    background-color: yellow;
+}
+.rea_green,
+.sol_green {
+    background-color: green;
+}
+.rea_cyan,
+.sol_cyan {
+    background-color: cyan;
+}
+.rea_blue,
+.sol_blue {
+    background-color: blue;
+}
+.rea_purple,
+.sol_purple {
+    background-color: purple;
+}
